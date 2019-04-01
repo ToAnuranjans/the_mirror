@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './home.dart';
-import './category.dart';
+import './product_list.dart';
 import './profile.dart';
 
 class PlaceHolderPage extends StatefulWidget {
@@ -14,13 +14,17 @@ class PlaceHolderPage extends StatefulWidget {
 class _PlaceHolderPageState extends State<PlaceHolderPage> {
   int _currentIndex = 0;
 
-  List<Widget> _pages = [HomePage(), CategoryPage(), ProfilePage()];
+  List<Widget> _pages = [HomePage(), ProductListPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        leading: Icon(Icons.all_out),
+        title: Text(
+          widget.title,
+        ),
+        titleSpacing: 0.0,
       ),
       body: _pages[_currentIndex],
       floatingActionButton: FloatingActionButton(
